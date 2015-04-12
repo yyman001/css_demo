@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .wrap{
+            margin: 10px auto 0;
+            position: relative;
+            height: 50px;
+            width: 300px;
+            border-radius: 5px;
+        }
+        .left,.right{
+            position: absolute;
+            top: 7px;
+            z-index: 1;
+        }
+        .left{
+            left: 7px;
+            width: 60px;
+            height:36px;
+            line-height: 40px;
+            text-align: center;
+            color: #FEFEFC;
+            border-radius: 5px;
+
+            font-size: 14px;
+        }
+        .right{
+            top:20px;
+            right: 10px;
+            height: 10px;
+            width: 210px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .loading{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 20%;
+            height: 10px;
+            border-radius: 5px;
+            background: #FFFFFF;
+            z-index: 2;
+        }
+        /*浅色*/
+        .blue{
+            background: #38B1CC;
+        }
+        /*深色*/
+        .blue2{
+            background: #3199B2;
+        }
+
+        .greed{background: #2CB299;}
+        .greed2{background: #269C84;}
+
+        .zi{background: #8E5D9F;}
+        .zi2{background: #7C5189;}
+
+        .huan{background: #EFC32F;}
+        .huan2{background: #D1AA29;}
+
+        .red{background: #E44C41;}
+        .red2{background: #C74239;}
+    </style>
+</head>
+<body>
+    <div class="wrap blue">
+        <div class="left blue2">8%</div>
+        <div class="right blue2">
+            <div class="loading"></div>
+        </div>
+    </div>
+
+    <div class="wrap greed">
+        <div class="left greed2">8%</div>
+        <div class="right greed2">
+            <div class="loading"></div>
+        </div>
+    </div>
+
+    <div class="wrap zi">
+        <div class="left zi2">8%</div>
+        <div class="right zi2">
+            <div class="loading"></div>
+        </div>
+    </div>
+
+    <div class="wrap huan">
+        <div class="left huan2">8%</div>
+        <div class="right huan2">
+            <div class="loading"></div>
+        </div>
+    </div>
+
+    <div class="wrap red">
+        <div class="left red2">8%</div>
+        <div class="right red2">
+            <div class="loading"></div>
+        </div>
+    </div>
+</body>
+</html>
