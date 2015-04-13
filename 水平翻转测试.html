@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>水平翻转测试对比实验</title>
+    <style>
+        .demo{
+            margin: 0 auto 20px;
+            width: 200px;
+            height: 160px;
+            font-size: 13px;
+            text-align: center;
+            background: #60B0E8 url("1e90ff.gif");
+            background-size: 200px 160px;
+            transition:all 1s ease-out;
+            -webkit-transform-origin: 50% 50%;
+            -moz-transform-origin: 50% 50%;
+            -ms-transform-origin: 50% 50%;
+            -o-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+        }
+
+        .test1:hover {
+            transform: rotateY(180deg);
+        }
+
+        .test2:hover {
+            transform: rotateY(-180deg);
+        }
+
+        .test3:hover {
+            -webkit-transform: scaleX(-1)
+        }
+
+        .test4:hover {
+            -webkit-transform: scaleX(1)
+        }
+        .test5{
+            -webkit-transform:perspective(100px) rotateY(0deg);
+        }
+        .test5:hover {
+            -webkit-transform:rotateY(180deg);
+        }
+        .test5_2{
+            -webkit-transform:perspective(0px) rotateY(0deg);
+        }
+        .test5_2{
+            -webkit-transform:perspective(300px) rotateY(0deg);
+        }
+        .test5_2:hover {
+            -webkit-transform:rotateY(180deg);
+        }
+        .test5_3{
+            -webkit-transform:perspective(0px) rotateY(0deg);
+        }
+        .test5_3:hover {
+            -webkit-transform:perspective(-300px) rotateY(180deg);
+        }
+        .test6:hover {
+            -webkit-transform:perspective(300px) rotateY(-180deg) translateZ(-10px);
+        }
+        .test7{
+            transform-origin: 0% 0%;
+            -webkit-transform:perspective(0px) rotateY(0deg) translateZ(-0px);
+        }
+        .test7:hover {
+            /*左边对照,x为0,y为0/100都可以,关键在x标*/
+            /*transform-origin:  0% 100%;*/
+            -webkit-transform:perspective(300px) rotateY(180deg) translateZ(-110px);
+        }
+        .test7_2{
+            transform-origin: 0% 0%;
+            -webkit-transform:perspective(0px) rotateY(0deg) translateZ(0px);
+        }
+        .test7_2:hover {
+            -webkit-transform:perspective(300px) rotateY(-180deg) translateZ(-110px);
+        }
+        .test8{
+            transform-origin: 100% 0%;
+            -webkit-transform:perspective(0px) rotateY(0deg) translateZ(0px);
+        }
+        .test8:hover {
+            /*右边对照,x为100,y为0/100都可以,关键在x标*/
+            /*transform-origin:  0% 100%;*/
+            -webkit-transform:perspective(300px) rotateY(180deg) translateZ(-110px);
+        }
+        .test8_2{
+            transform-origin: 100% 0%;
+            -webkit-transform:perspective(0px) rotateY(0deg) translateZ(0px);
+        }
+        .test8_2:hover {
+            -webkit-transform:perspective(300px) rotateY(-180deg) translateZ(-110px);
+        }
+    </style>
+</head>
+<body>
+<!--
+  对于这次的翻转效果,重点还是在于 CSS3 的翻转3D,即使你用的js,最后还是调用css3来实现
+  注意:transform-origin 属性,属于 tranform 变形中的 对照的进行变化,默认 为 中心点,即 50% 50% 或者 center center 或 px为单位,具体可以去查询
+  实现1: 可以用使用翻转属性 rotate 需要在后面加坐标轴,不然就是2D翻转 ,水平翻转是 对应 y 轴进行旋转 那么,rotateY ,注意写单位 deg
+  实现2: 评论区看到的, 扭曲属性 skew 效果确实可以的
+  下面进行一组实验(有少许bug)
+  重点在于翻转坐标点 以及 视觉点 perspective(数值越大,图形越小,)  和 translateZ轴产生的距离,产生的视觉效果
+  留几个动画库地址给大家,有兴趣可以自己去看下,css3的动画是很有魅力的
+  Animatable 动画效果39例 http://leaverou.github.io/animatable/
+  CSS3 动画效果 https://github.com/h5bp/Effeckt.css
+  https://github.com/daneden/animate.css
+  http://connoratherton.com/loaders
+-->
+<div class="demo test1">1普通rotateY翻转 正180</div>
+<div class="demo test2">2普通rotateY翻转 负180</div>
+<div class="demo test3">3 scaleX(-1)水平翻转测试</div>
+<div class="demo test4">4水平翻转测试(无效果)</div>
+<div class="demo test5">5立体rotateY翻转 正180</div>
+<div class="demo test5_2">5_2立体rotateY翻转 正180</div>
+<div class="demo test5_3">5_3立体rotateY翻转 正180(无效果)</div>
+<div class="demo test6">6立体rotateY翻转 负180</div>
+<div class="demo test7">7以左边进行立体翻转rotateY 正180 </div>
+<div class="demo test7_2">7_2以左边进行立体翻转rotateY 负180 </div>
+<div class="demo test8">8以右边进行立体翻转rotateY 正180 </div>
+<div class="demo test8_2">8_2以右边进行立体翻转rotateY 负180 </div>
+</body>
+</html>
